@@ -8,5 +8,11 @@
 <h1>
     Validation completed!
 </h1>
+
+<p>
+    <?php
+
+    ?>
+</p>
 </body>
 </html>
