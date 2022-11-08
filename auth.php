@@ -7,7 +7,7 @@
 
 <body>
 <h1 id="header">Enter your data here</h1>
-<form name="next" id="next" action="success.php" method="post" onsubmit="return validateForms()">
+<form name="next" id="next" action="success.php" method="post">
 
     <label for="lg">Login</label>
     <input type="text" id="lg" name="lg" placeholder="Enter your login here" required><br>

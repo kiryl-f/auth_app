@@ -11,7 +11,10 @@
 
 <p>
     <?php
+        require_once 'user.php';
 
+        $user = new User($_POST['lg'], $_POST['nm'],$_POST['mail'], $_POST['pw']);
+        var_dump($user);
     ?>
 </p>
 </body>
