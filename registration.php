@@ -3,27 +3,38 @@
 <head>
     <link rel="stylesheet" href="auth_style.css">
     <title>Authentication</title>
+
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script>
+        $(function () {
+
+            $('form').on('next', function (e) {
+
+                e.preventDefault();
+
+                $.ajax({
+                    type: 'post',
+                    url: 'create_user.php',
+                    dataType: 'json',
+                    data: $('form').serialize(),
+                    success: function () {
+                        alert('form was submitted');
+                    }
+                });
+
+            });
+
+        });
+    </script>
+
 </head>
 
 <body>
 <h1 id="header">Enter your data here</h1>
-<!--<form id="login" name="login">
 
-</form>
-<form id="password" name="password">
 
-</form>
-<form id="confirm_password" name="confirm_password">
+<form name="next" id="next"  onsubmit="return validateForms()">
 
-</form>
-<form id="email" name="email">
-
-</form>
-<form name = "name" id="name" >
-
-</form>-->
-
-<form name="next" id="next" action="success.php" method="post" onsubmit="return validateForms()">
 
     <label for="lg">Login</label>
     <input type="text" id="lg" name="lg" placeholder="Enter your login here" required><br>
