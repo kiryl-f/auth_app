@@ -4,27 +4,10 @@
     <link rel="stylesheet" href="auth_style.css">
     <title>Authentication</title>
 
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
     <script>
-        $(function () {
 
-            $('form').on('next', function (e) {
 
-                e.preventDefault();
-
-                $.ajax({
-                    type: 'post',
-                    url: 'create_user.php',
-                    dataType: 'json',
-                    data: $('form').serialize(),
-                    success: function () {
-                        alert('form was submitted');
-                    }
-                });
-
-            });
-
-        });
     </script>
 
 </head>
@@ -59,6 +42,8 @@
 </body>
 </html>
 
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
 <script>
     function onlyLettersAndNumbers(str) {
         return /^[A-Za-z0-9]*$/.test(str);
@@ -74,11 +59,11 @@
     }
 
     function validateForms(){
-        let name = document.next.nm.value.trim();
-        let password = document.next.pw.value.trim();
-        let confirm_password = document.next.c_pw.value.trim();
-        let login = document.next.lg.value.trim();
-        let email = document.next.mail.value.trim();
+        var name = document.next.nm.value.trim();
+        var password = document.next.pw.value.trim();
+        var confirm_password = document.next.c_pw.value.trim();
+        var login = document.next.lg.value.trim();
+        var email = document.next.mail.value.trim();
         if (login.length < 6) {
             alert("Login must contain at least 6 symbols");
             return false;
@@ -107,8 +92,16 @@
             alert("Name should consist of letters");
             return false;
         }
+        $.ajax({
+            url: 'create_user.php',         /* Куда отправить запрос */
+            type: 'post',             /* Метод запроса (post или get) */
+            dataType: 'json',          /* Тип данных в ответе (xml, json, script, html). */
+            data: {login: login, password: password, name: name, email:email},     /* Данные передаваемые в массиве */
+            success: function(data){   /* функция которая будет выполнена после успешного запроса.  */
+                //alert(data); /* В переменной data содержится ответ от index.php. */
+                window.open("users.xml");
+            }
+        });
     }
 
 </script>
-
-<script src="js/fetch.js"></script>
