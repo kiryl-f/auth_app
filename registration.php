@@ -93,14 +93,10 @@
             return false;
         }
         $.ajax({
-            url: 'create_user.php',         /* Куда отправить запрос */
-            type: 'post',             /* Метод запроса (post или get) */
-            dataType: 'json',          /* Тип данных в ответе (xml, json, script, html). */
-            data: {login: login, password: password, name: name, email:email},     /* Данные передаваемые в массиве */
-            success: function(data){   /* функция которая будет выполнена после успешного запроса.  */
-                //alert(data); /* В переменной data содержится ответ от index.php. */
-                window.open("users.xml");
-            }
+            url: 'create_user.php',
+            type: 'post',
+            dataType: 'json',
+            data: {login: login, password: password, name: name, email:email},
         });
     }
 
