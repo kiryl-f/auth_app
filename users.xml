@@ -1,2 +1,4 @@
-
-
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+    
+<user/><login>first_user_login</login><password>123456</password><email>email@example.com</email><name>myname</name></users>
