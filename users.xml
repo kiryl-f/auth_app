@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <users>
 
-</users>
+<user><login>login</login><password>e10adc3949ba59abbe56e057f20f883esalt</password><email>email@example.com</email><name>myname</name></user></users>
