@@ -3,6 +3,7 @@
 $xml = simplexml_load_file('users.xml');
 $users = new SimpleXMLElement($xml->asXML());
 $size = $xml->count();
+var_dump($users);
 
 $res = '';
 $failed = false;
@@ -22,10 +23,10 @@ for($i = 0;$i < $size;$i++) {
 }
 
 if(!$failed) {
-    echo 'good';
+
     setcookie('name', $_POST['name']);
 
-    $users->addChild('name');
+    $users->addChild('user');
     $users->user[$size]->addChild('login', $_POST['login']);
     $users->user[$size]->addChild('password', md5($_POST['password']) . 'salt');
     $users->user[$size]->addChild('email', $_POST['mail']);
