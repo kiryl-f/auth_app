@@ -2,8 +2,8 @@ $(function () {
     $('form').on('submit', function (e) {
         e.preventDefault();
 
-        var password = $('#password').val();
-        var confirm_password = $('#confirm_password').val();
+        var password = $('#password').val().trim();
+        var confirm_password = $('#confirm_password').val().trim();
         if(password === confirm_password) {
             $.ajax({
                 type: 'post',
