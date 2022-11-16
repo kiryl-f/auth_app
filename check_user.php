@@ -14,8 +14,8 @@ for($i = 0;$i < $size;$i++) {
     }
 }
 if($found) {
-    echo 'found';
+    echo json_encode(array('found' => 'true'));
     setcookie('name', $name);
 } else {
-    echo 'not found';
+    echo json_encode(array('found' => 'false'));
 }
